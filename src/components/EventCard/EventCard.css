@@ -1,0 +1,92 @@
+.event-card {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 500px;
+  border-style: solid;
+  background-color: black;
+  border-radius: 15px;
+  color: white;
+}
+.event-card > img {
+  width: 100%;
+  height: 50%;
+  border-radius: 15px;
+}
+.event-card-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 40%;
+  margin: 5px 0px;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 10px;
+}
+.event-card-name {
+  text-transform: uppercase;
+  font-family: Big Shoulders Text;
+  font-size: 23px;
+  text-align: center;
+  margin: 5px 0px;
+}
+.event-card-discription {
+  font-family: Sofia Sans;
+  text-align: center;
+  margin: 7px 0px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.event-card-venue {
+  margin: 4px 0px;
+  text-align: center;
+}
+.event-card-date {
+  margin: 4px 0px;
+  text-align: center;
+}
+.event-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 10%;
+  padding: 0px 10px;
+}
+.event-footer-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+.event-footer-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+}
+.event-footer-register {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  gap: 8px;
+  color: #A0F3AD;
+}
+.event-footer-register > i {
+  font-size: 1.5rem;
+} 
+.event-footer-bookmark {
+  font-size: 2rem;
+  color: #EA8282;
+}
+@media only screen and (max-width: 830px) {
+}
+
+@media only screen and (max-width: 330px) {
+}

@@ -1,0 +1,3 @@
+const AUTHORIZATION_TOKEN = '';
+
+export default AUTHORIZATION_TOKEN;
