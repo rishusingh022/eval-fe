@@ -11,6 +11,25 @@ function HomePage() {
   const navigate = useNavigate();
   const [onCardClick, setOnCardClick] = React.useState(false);
   const [searchValue, setsearchValue] = React.useState('');
+  const [filterIsRegistered, setFilterIsRegistered] = React.useState(false);
+  const [filteredIsBookmarked, setFilteredIsBookmarked] = React.useState(false);
+  const [filteredIsAvailable, setFilteredIsAvailable] = React.useState(false);
+  const handleFilterIsRegistered = () => {
+    setFilterIsRegistered(true);
+    setFilteredIsBookmarked(false);
+    setFilteredIsAvailable(false);
+  };
+  const handleFilteredIsBookmarked = () => {
+    setFilteredIsBookmarked(true);
+    setFilterIsRegistered(false);
+    setFilteredIsAvailable(false);
+  };
+  const handleFilteredIsAvailable = () => {
+    setFilteredIsAvailable(true);
+    setFilterIsRegistered(false);
+    setFilteredIsBookmarked(false);
+  };
+
   const handleSearchValue = (value) => {
     console.log(value);
     setsearchValue(value);
@@ -19,6 +38,7 @@ function HomePage() {
     setOnCardClick(true);
     navigate(`/event/${id}`);
   };
+  console.log(filterIsRegistered, filteredIsBookmarked, filteredIsAvailable);
   React.useEffect(() => {
     makeRequest(GET_DATA_URL, navigate, {})
       .then((res) => {
@@ -33,10 +53,18 @@ function HomePage() {
       <Header />
       <div className="HomePageContainer">
         <div className="HomePagefilter">
-          <EventFilter handleSearchValue={handleSearchValue} />
+          <EventFilter
+            handleFilterIsRegistered={handleFilterIsRegistered}
+            handleFilteredIsBookmarked={handleFilteredIsBookmarked}
+            handleFilteredIsAvailable={handleFilteredIsAvailable}
+            handleSearchValue={handleSearchValue}
+          />
         </div>
         <div className="EventCard">
-          {!searchValue &&
+          {!filterIsRegistered &&
+            !filteredIsBookmarked &&
+            !filteredIsAvailable &&
+            !searchValue &&
             eventData.map((event, index) => (
               <EventCard
                 key={index}
@@ -44,10 +72,49 @@ function HomePage() {
                 handleCardClick={handleCardClick}
               />
             ))}
-          {searchValue &&
+          {!filterIsRegistered &&
+            !filteredIsBookmarked &&
+            !filteredIsAvailable &&
+            searchValue &&
             eventData
               .filter((event) => {
                 return event.name.toLowerCase().includes(searchValue);
+              })
+              .map((event, index) => (
+                <EventCard
+                  key={index}
+                  eventData={event}
+                  handleCardClick={handleCardClick}
+                />
+              ))}
+          {filterIsRegistered &&
+            eventData
+              .filter((event) => {
+                return event.isRegistered === true;
+              })
+              .map((event, index) => (
+                <EventCard
+                  key={index}
+                  eventData={event}
+                  handleCardClick={handleCardClick}
+                />
+              ))}
+          {filteredIsBookmarked &&
+            eventData
+              .filter((event) => {
+                return event.isBookmarked === true;
+              })
+              .map((event, index) => (
+                <EventCard
+                  key={index}
+                  eventData={event}
+                  handleCardClick={handleCardClick}
+                />
+              ))}
+          {filteredIsAvailable &&
+            eventData
+              .filter((event) => {
+                return event.areSeatsAvailable === true;
               })
               .map((event, index) => (
                 <EventCard

@@ -42,16 +42,32 @@ function EventFilter(props) {
               <input type="radio" value="all" name="filter" /> ALL
             </span>
             <span>
-              <input type="radio" value="registered" name="filter" /> REGISTERED
+              <input
+                onClick={props.handleFilterIsRegistered}
+                type="radio"
+                value="registered"
+                name="filter"
+              />{' '}
+              REGISTERED
             </span>
           </div>
           <div className="rb-col-right">
             <span>
-              <input type="radio" value="bookmarked" name="filter" />
+              <input
+                onClick={props.handleFilteredIsBookmarked}
+                type="radio"
+                value="bookmarked"
+                name="filter"
+              />
               BOOKMARKED
             </span>
             <span className="fix">
-              <input type="radio" value="seats" name="filter" />
+              <input
+                onClick={props.handleFilteredIsAvailable}
+                type="radio"
+                value="seats"
+                name="filter"
+              />
               SEATS AVAILABLE
             </span>
           </div>
@@ -65,4 +81,7 @@ export default EventFilter;
 
 EventFilter.propTypes = {
   handleSearchValue: props.func,
+  handleFilterIsRegistered: props.func,
+  handleFilteredIsAvailable: props.func,
+  handleFilteredIsBookmarked: props.func,
 };
