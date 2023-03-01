@@ -36,13 +36,26 @@ function HomePage() {
           <EventFilter handleSearchValue={handleSearchValue} />
         </div>
         <div className="EventCard">
-          {eventData.map((event, index) => (
-            <EventCard
-              key={index}
-              eventData={event}
-              handleCardClick={handleCardClick}
-            />
-          ))}
+          {!searchValue &&
+            eventData.map((event, index) => (
+              <EventCard
+                key={index}
+                eventData={event}
+                handleCardClick={handleCardClick}
+              />
+            ))}
+          {searchValue &&
+            eventData
+              .filter((event) => {
+                return event.name.toLowerCase().includes(searchValue);
+              })
+              .map((event, index) => (
+                <EventCard
+                  key={index}
+                  eventData={event}
+                  handleCardClick={handleCardClick}
+                />
+              ))}
         </div>
       </div>
     </div>

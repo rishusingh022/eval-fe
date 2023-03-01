@@ -7,14 +7,12 @@ function EventFilter(props) {
     setadvanceFilter(!advancefilter);
   };
   const [searchName, setSearchName] = React.useState('');
-  const [searchValue, setsearchValue] = React.useState('');
   const handleSetSearchName = (e) => {
     console.log(e.target.value);
     setSearchName(e.target.value);
   };
   const handleClick = () => {
-    setIsSearch(true);
-    setsearchValue(searchName);
+    setSearchName(searchName);
     props.handleSearchValue(searchName);
     setSearchName('');
   };
