@@ -10,6 +10,11 @@ function HomePage() {
   const [eventData, setEventData] = React.useState([]);
   const navigate = useNavigate();
   const [onCardClick, setOnCardClick] = React.useState(false);
+  const [searchValue, setsearchValue] = React.useState('');
+  const handleSearchValue = (value) => {
+    console.log(value);
+    setsearchValue(value);
+  };
   const handleCardClick = (id) => {
     setOnCardClick(true);
     navigate(`/event/${id}`);
@@ -28,7 +33,7 @@ function HomePage() {
       <Header />
       <div className="HomePageContainer">
         <div className="HomePagefilter">
-          <EventFilter />
+          <EventFilter handleSearchValue={handleSearchValue} />
         </div>
         <div className="EventCard">
           {eventData.map((event, index) => (

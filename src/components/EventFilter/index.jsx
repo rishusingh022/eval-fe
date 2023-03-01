@@ -1,9 +1,22 @@
 import React from 'react';
 import './EventFilter.css';
-function EventFilter() {
+import props from 'prop-types';
+function EventFilter(props) {
   const [advancefilter, setadvanceFilter] = React.useState(false);
   const handleAdvanceFilter = () => {
     setadvanceFilter(!advancefilter);
+  };
+  const [searchName, setSearchName] = React.useState('');
+  const [searchValue, setsearchValue] = React.useState('');
+  const handleSetSearchName = (e) => {
+    console.log(e.target.value);
+    setSearchName(e.target.value);
+  };
+  const handleClick = () => {
+    setIsSearch(true);
+    setsearchValue(searchName);
+    props.handleSearchValue(searchName);
+    setSearchName('');
   };
   return (
     <div className="container">
@@ -17,8 +30,11 @@ function EventFilter() {
           ></i>
         </div>
         <div className="search">
-          <input placeholder="EVENT NAME"></input>
-          <i className="fas fa-search fa-2x"></i>
+          <input
+            onChange={handleSetSearchName}
+            placeholder="EVENT NAME"
+          ></input>
+          <i onClick={handleClick} className="fas fa-search fa-2x"></i>
         </div>
       </div>
       {advancefilter && (
@@ -48,3 +64,7 @@ function EventFilter() {
 }
 
 export default EventFilter;
+
+EventFilter.propTypes = {
+  handleSearchValue: props.func,
+};
