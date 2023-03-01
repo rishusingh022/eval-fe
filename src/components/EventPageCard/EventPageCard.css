@@ -1,11 +1,11 @@
 .event-page-card {
-  margin-top:10px;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   width: 600px;
   height: 800px;
   border-style: solid;
-  background-color: black;
+  background-color: var(--theme-color);
   border-radius: 15px;
   color: white;
 }

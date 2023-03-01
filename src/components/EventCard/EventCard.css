@@ -4,7 +4,7 @@
   width: 400px;
   height: 500px;
   border-style: solid;
-  background-color: black;
+  background-color: var(--theme-color);
   border-radius: 15px;
   color: white;
 }

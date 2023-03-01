@@ -1,20 +1,21 @@
 .HomePageContainer {
-    width: 100%;
-    height: 84vh;
-    padding: 0% 15%;
+  width: 100%;
+  min-height: 84vh;
+  padding: 0% 15%;
+  margin-bottom: 100px;
 }
 .HomePagefilter {
-    width: 100%;
-    height: 15%;
-    margin-bottom: 5px;  
+  width: 100%;
+  height: 15%;
+  margin-bottom: 5px;
 }
 
 .EventCard {
-    width: 100%;
-    height: 100%;
-    margin-bottom: 5px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    flex-direction: row;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  flex-direction: row;
 }
