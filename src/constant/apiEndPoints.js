@@ -6,11 +6,11 @@ export const GET_DATA_URL = {
 };
 
 export const GET_DATA_BY_ID_URL = (id) => ({
-  url: `api/events/${id}/`,
+  url: `api/events/${id}`,
   method: 'get',
 });
 
-export const UPDATE_DATA_URL = (dataId) => ({
-  url: `api/events/${id}/`,
+export const UPDATE_DATA_URL = (id) => ({
+  url: `api/events/${id}`,
   method: 'patch',
 });

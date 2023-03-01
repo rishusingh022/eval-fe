@@ -1,19 +1,20 @@
-.event-card {
+.event-page-card {
+  margin-top:10px;
   display: flex;
   flex-direction: column;
-  width: 400px;
-  height: 500px;
+  width: 600px;
+  height: 800px;
   border-style: solid;
   background-color: black;
   border-radius: 15px;
   color: white;
 }
-.event-card > img {
+.event-page-card > img {
   width: 100%;
-  height: 50%;
+  height: 40%;
   border-radius: 15px;
 }
-.event-card-content {
+.event-page-card-content {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -23,14 +24,14 @@
   align-items: center;
   padding: 0px 10px;
 }
-.event-card-name {
+.event-page-card-name {
   text-transform: uppercase;
   font-family: Big Shoulders Text;
   font-size: 23px;
   text-align: center;
   margin: 5px 0px;
 }
-.event-card-discription {
+.event-page-card-discription {
   font-family: Sofia Sans;
   text-align: center;
   margin: 7px 0px;
@@ -39,15 +40,15 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
-.event-card-venue {
+.event-page-card-venue {
   margin: 4px 0px;
   text-align: center;
 }
-.event-card-date {
+.event-page-card-date {
   margin: 4px 0px;
   text-align: center;
 }
-.event-footer {
+.event-page-footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -55,14 +56,14 @@
   height: 10%;
   padding: 0px 10px;
 }
-.event-footer-left {
+.event-page-footer-left {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   gap: 8px;
 }
-.event-footer-left-cross {
+.event-page-footer-left-cross {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -70,14 +71,14 @@
   gap: 8px;
   color: #ececab;
 }
-.event-footer-right {
+.event-page-footer-right {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
   gap: 8px;
 }
-.event-footer-register {
+.event-page-footer-register {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -86,15 +87,28 @@
   gap: 8px;
   color: #a0f3ad;
 }
-.event-footer-register > i {
+.event-page-footer-register > i {
   font-size: 1.5rem;
 }
-.event-footer-bookmark {
+.event-page-footer-bookmark {
   font-size: 2rem;
   color: #ea8282;
 }
-@media only screen and (max-width: 830px) {
-}
 
-@media only screen and (max-width: 330px) {
+.event-page-footer-register {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+.event-page-footer-register button {
+  background-color: #a0f3ad;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 20px;
+  font-family: Sofia Sans;
+  cursor: pointer;
 }

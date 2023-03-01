@@ -1,0 +1,17 @@
+.EventPageContainer {
+    width: 100%;
+    height: 84vh;
+    padding: 0% 15%;
+}
+
+.EventPageCard {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
