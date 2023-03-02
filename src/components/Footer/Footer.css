@@ -20,8 +20,32 @@
   gap: 10px;
   margin-bottom: 5px;
 }
-.button {
-  background-color: #9b9999;
+.grey-button {
+  background-color: grey;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 13px;
+}
+.purple-button {
+  background-color: purple;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 13px;
+}
+.blue-button {
+  background-color: blue;
   border: none;
   color: white;
   padding: 10px 20px;
